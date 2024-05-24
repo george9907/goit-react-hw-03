@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-// import './App.css'
+import css from './App.module.css'
 import ContactForm from '../ContactForm/ContactForm'
 import SearchBox from '../SearchBox/SearchBox'
 import ContactList from '../ContactList/ContactList'
@@ -36,8 +36,8 @@ setContacts((prevContact)=>{
       return[...prevContact, newUser]     
     })}
 
-    return <div>
-        <h1>Phonebook</h1>
+    return <div className={css.container}>
+        <h1 className={css.header}>Phonebook</h1>
         <ContactForm onAdd={addNewUser} />
         <SearchBox value={value} onFilter={setValue}/>
         <ContactList contacts={visibleContacts}  onDelete={onDelete}/>
